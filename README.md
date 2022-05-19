@@ -14,19 +14,28 @@ Voltado para formandos de nutrição e nutricionistas atuantes em clinicas médi
 crianças pequenas.
 
 *Requisitos Funcionais (casos de uso):
+
 1- O app deve possuir uma tela de login, onde o usuário (nutricionista) vai informar credenciais para acessar a tela 
 principal do aplicativo.
+
 2-O app deve possuir uma tela de cadastro para o usuário (nutricionista) fazer o seu cadastro.
+
 3-O app deve possuir a primeira tela que será a interface onde o usuário vai escolher entre duas opções, a primeira seria 
 acesso apenas para o nutricionista, a segunda seria apenas para os pais da criança.
+
 4- O app deve possuir outra tela onde o usuário (pais da criança) vai acessar através de uma chave de acesso que o 
 nutricionista vai passar para os pais do paciente na hora da consulta.
+
 5- O app deve possuir outra tela onde o usuário (pais da criança) vai acessar através de uma chave de acesso que o
 nutricionista vai passar para os pais do paciente na hora da consulta (ou uma senha de login).
+
 6- O app vai possuir uma tela listagem onde vai ter uma lista de todos os pacientes + opção de adicionar novo paciente.
+
 7-O app deve possuir também uma tela para o nutricionista acessar um campo para registrar os dados do paciente. 
+
 8-O app deve possuir outra tela seguida para construir o cardápio para determinado paciente, essa função é apenas 
 disponível para o profissional de saúde fazer suas alterações.
+
 9- O app deve possuir uma chave de acesso para o paciente, que é gerada pelo nutricionista ou pelo próprio app (a definir).
  
  
