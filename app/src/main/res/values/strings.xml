@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">NutriKids</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <style name="nutrikids">
+        <item name="android:textSize">
+            40sp
+        </item>
+        <item name="android:textColor">
+            #0E560C
+        </item>
+    </style>
+
+
+</resources>
