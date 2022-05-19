@@ -2,6 +2,7 @@
 Aplicação voltada para a área da nutrição infantil (Application aimed at the area of child nutrition)
 
 *Objetivo do app mobile:
+
 O principal objetivo do app seria a construção de um app em que se possa ser usado dentro de um consultório de um app em que 
 se possa ser usado dentro de uma determinada faixa etaria de idade. Atualmente se ver uma grande demanda de aplicativos voltados
 para a saúde, portanto é importante que se tenha ferramentas para as areas especificas, como psicologia, nutrição, fisioterapia,
@@ -10,6 +11,7 @@ paciente vai ter a opção de visualizar o seu cardapio e o nutri vai poder cada
 uma chave para que o usuario possa abrir a sua tela de cardápio e relatório.
 
 *Público-Alvo:
+
 Voltado para formandos de nutrição e nutricionistas atuantes em clinicas médicas ou postos de saúde e pais/responsáveis por 
 crianças pequenas.
 
