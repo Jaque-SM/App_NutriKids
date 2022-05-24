@@ -8,9 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NutriKids">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Tela de Login -->
+        <!-- Tela de login -->
+        <activity
+            android:name=".TelaLoginActivity2_nutri"
+            android:exported="false" />
+        <!-- Tela de Botao para escolhar de usuario -->
+
         <activity
             android:name=".Login_Activity"
             android:exported="false" />

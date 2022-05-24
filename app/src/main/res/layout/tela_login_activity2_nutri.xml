@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/tela_login"
+    tools:context=".TelaLoginActivity2_nutri">
+
+    <View
+        android:id="@+id/rectangle_2"
+        style="@style/view_trans"
+        android:layout_centerInParent="true" />
+
+    <EditText
+        android:id="@+id/camp_login"
+        style="@style/edit_text"
+        android:drawableEnd="@drawable/ic_login"
+        android:layout_alignTop="@id/rectangle_2"
+        android:layout_marginTop="50dp"
+
+        android:ems="10"
+        android:hint="Login"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/camp_senha"
+        style="@style/edit_text"
+        android:layout_below="@id/camp_login"
+        android:layout_marginTop="47dp"
+        android:drawableEnd="@drawable/ic_eye"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPersonName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_entrar"
+        style="@style/botao_estilo_2"
+
+        android:layout_alignTop="@id/camp_senha"
+        android:layout_marginTop="116dp"
+
+        android:text="ENTRAR" />
+
+    <TextView
+        android:id="@+id/criar_conta"
+        style="@style/text_view_1"
+        android:layout_below="@id/botao_entrar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/verde_botao"
+        android:text="Criar contar"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/text_view_1"
+
+        android:layout_alignTop="@id/camp_senha"
+        android:layout_alignEnd="@id/camp_senha"
+        android:textColor="@color/laranja"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="Esqueceu a senha?" />
+
+
+</RelativeLayout>
