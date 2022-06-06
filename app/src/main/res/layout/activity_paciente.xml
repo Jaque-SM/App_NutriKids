@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_pio_pe"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/cardapio"
+    android:clipToOutline="true"
+    tools:context=".PacienteActivity">
+
+
+    <View
+        android:id="@+id/barra1"
+        android:layout_width="325dp"
+        android:layout_height="502dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_tela_inicial" />
+
+    <ImageView
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+
+
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/foto_paciente"
+         />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_cardapio"
+        style="@style/botao_estilo_3"
+
+        android:layout_alignTop="@id/barra1"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="@string/cardapio_paciente"
+        android:textAppearance="@style/cardapio" />
+
+
+</RelativeLayout>

@@ -1,7 +1,5 @@
 package com.example.nutrikids;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +23,7 @@ public class SplashActivity extends Activity {
     }
 
     public void mostrar_login(){
-        Intent tent= new Intent(SplashActivity.this, Login_Activity.class);
+        Intent tent= new Intent(SplashActivity.this, InicioActivity.class);
         startActivity(tent);
         finish();
     }

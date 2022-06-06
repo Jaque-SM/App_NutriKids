@@ -2,9 +2,17 @@
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#D779E1</color>
+    <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="laranja">#FF8C00</color>
+    <color name="verde_botao">#2D722B</color>
+    <color name="cinza_30">#4DC4C4C4</color>
+    <color name="prata">#C0C0C0</color>
+
+    <!-- Botao estilo 3-->
+    <color name="amarelo_1">#F0F424</color>
+
 </resources>

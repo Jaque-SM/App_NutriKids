@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/tela_inicial"
+   tools:context=".InicioActivity">
+
+    <View
+        android:id="@+id/rectangle_1"
+        style="@style/view_trans"
+        android:layout_centerInParent="true" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_sou_nutri"
+        style="@style/botao_estilo_1"
+        android:onClick="LoginNutri"
+        android:layout_alignTop="@id/rectangle_1"
+        android:layout_marginTop="80dp"
+        android:text="SOU NUTRI" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_responsavel"
+        style="@style/botao_estilo_1"
+        android:layout_alignBottom="@+id/rectangle_1"
+        android:layout_marginBottom="80dp"
+        android:onClick="LoginResponsavel"
+        android:text="RESPONSÁVEL" />
+
+
+</RelativeLayout>

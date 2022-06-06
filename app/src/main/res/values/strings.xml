@@ -3,12 +3,180 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="nome_com">Nome Completo:</string>
+
+    <string name="data_de_nas">Data de Nascimento:</string>
+
+    <string name="telefone">Telefone:</string>
+
+    <string name="email">E-mail:</string>
+
+    <string name="senha">Senha:</string>
+
+    <string name="confirme">Confirme sua senha:</string>
+
+    <string name="finalizar">Finalizar</string>
+
+    <string name="sou_nutri">SOU NUTRI</string>
+
+    <string name="respons_vel">RESPONSÁVEL</string>
+
+    <string name="cardapio_paciente">Cardápio de Pedro</string>
+
+    <style name="cardapio">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="responsavel">
+
+        <item name="android:textSize">
+            32sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+
+        <item name="android:textColor">
+            #2D722B
+        </item>
+
+    </style>
+
+    <style name="sou_nutri">
+        <item name="android:textSize">
+            32sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+        <item name="android:textColor">
+            #2D722B
+        </item>
+
+    </style>
+
+    <!--Definir layout de titulo-->
     <style name="nutrikids">
         <item name="android:textSize">
             40sp
         </item>
         <item name="android:textColor">
             #0E560C
+        </item>
+    </style>
+
+    <!--Definir layout de string nome-->
+    <style name="nome_completo">
+        <item name="android:textSize">
+            15sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+
+
+        <!--Definir layout de string telefone -->
+    </style>
+
+    <style name="data_de_nas">
+        <item name="android:textSize">
+            15sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <!--Definir layout de string telefone -->
+    <style name="telefone">
+        <item name="android:textSize">
+            15sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+
+    <!--Definir layout de string email -->
+    <style name="email">
+        <item name="android:textSize">
+            15sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <!--Definir layout de string senha -->
+    <style name="senha">
+
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <!--Definir layout de string confirme_senha -->
+    <style name="confirme_su">
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <!--Definir layout do button finalizar-->
+    <style name="finalizar_text">
+        <item name="android:textSize">
+            23sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_medium
+        </item>
+
+        <item name="android:textColor">
+            #FFF6F6
         </item>
     </style>
 

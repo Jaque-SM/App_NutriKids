@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tela_cadast"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back_cadastro">
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="323dp"
+        android:layout_height="655dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_tela_inicial"/>
+
+    <ImageView
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:src="@drawable/foto_paciente"
+        android:layout_alignTop="@id/rectangle_1"
+        android:layout_alignEnd="@id/rectangle_1"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/foto_estilo" />
+
+    <TextView
+        android:id="@+id/nome_comple"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangle_1"
+        android:layout_alignBottom="@id/rectangle_5"
+        android:layout_marginStart="33dp"
+
+
+        android:layout_marginBottom="33dp"
+        android:text="@string/nome_com"
+        android:textAppearance="@style/nome_completo" />
+
+    <EditText
+        android:id="@+id/rectangle_5"
+        android:layout_width="268dp"
+        android:layout_height="29dp"
+        android:layout_alignStart="@+id/nome_comple"
+        android:layout_marginTop="192dp"
+        android:background="@drawable/estilo_edit_campo_cadastro"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/data_de_nas"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/rectangle_1"
+        android:layout_alignBottom="@+id/rectangle_5"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="-33dp"
+        android:text="@string/data_de_nas"
+        android:textAppearance="@style/data_de_nas" />
+
+    <EditText
+        android:id="@+id/rectangle_6"
+        android:layout_width="131dp"
+        android:layout_height="29dp"
+        android:layout_alignStart="@+id/data_de_nas"
+        android:layout_marginTop="258dp"
+        android:background="@drawable/estilo_edit_campo_cadastro"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/rectangle_6"
+        android:layout_marginTop="300dp"
+        android:text="@string/telefone"
+        android:textAppearance="@style/telefone" />
+
+
+    <EditText
+        android:id="@+id/telefone_barra"
+        android:layout_width="131dp"
+        android:layout_height="29dp"
+        android:layout_alignStart="@+id/telefone"
+        android:layout_marginTop="322dp"
+        android:background="@drawable/estilo_edit_campo_cadastro"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/telefone_barra"
+        android:layout_marginTop="359dp"
+        android:text="@string/email"
+        android:textAppearance="@style/email" />
+
+    <EditText
+        android:id="@+id/email_barra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/email"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/estilo_edit_campo_cadastro"
+        android:gravity="top" />
+
+    <TextView
+        android:id="@+id/senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/email"
+        android:layout_marginTop="420dp"
+        android:gravity="top"
+        android:text="@string/senha"
+        android:textAppearance="@style/senha" />
+
+    <EditText
+        android:id="@+id/senha_barra"
+        android:layout_width="268dp"
+        android:layout_height="29dp"
+        android:layout_alignStart="@+id/senha"
+        android:layout_marginTop="443dp"
+        android:background="@drawable/estilo_edit_campo_cadastro" />
+
+    <TextView
+        android:id="@+id/confirme_su"
+        android:layout_width="207dp"
+        android:layout_height="18dp"
+        android:layout_alignStart="@+id/senha_barra"
+        android:layout_marginTop="484dp"
+        android:text="@string/confirme"
+        android:textAppearance="@style/confirme_su"/>
+
+    <EditText
+        android:id="@+id/confirme_barra"
+        android:layout_width="268dp"
+        android:layout_height="29dp"
+        android:layout_alignStart="@+id/confirme_su"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="507dp"
+        android:background="@drawable/estilo_edit_campo_cadastro" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_finalizar"
+        style="@style/botao_estilo_2"
+        android:layout_alignTop="@id/confirme_barra"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="50dp"
+
+        android:onClick="mostrar_usuario"
+        android:text="@string/finalizar"
+        android:textAppearance="@style/finalizar_text" />
+
+
+</RelativeLayout>
