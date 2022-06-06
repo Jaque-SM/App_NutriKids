@@ -32,6 +32,7 @@
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/fragment_b.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/fragment_cardapio_1_.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/fragment_inicio.xml" value="0.33489583333333334" />
+<<<<<<< HEAD
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/tela_cardapio_activity4_infos.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/tela_escolhar_activity2.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/2019101202010272/Desktop/NutriKids/app/src/main/res/layout/tela_login_activity3_nutri.xml" value="0.33489583333333334" />
@@ -105,6 +106,18 @@
         <entry key="..\:/Users/JAQUE/Desktop/NutriKids/app/src/main/res/layout/tela_nutri_cardapio1_4.xml" value="0.19375" />
         <entry key="..\:/Users/JAQUE/Downloads/NutriKids/app/src/main/res/layout/activity_paciente.xml" value="0.19375" />
         <entry key="..\:/Users/JAQUE/Downloads/NutriKids/app/src/main/res/layout/fragment_cardapio_1.xml" value="0.19375" />
+=======
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/background_botao_verde.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/background_tela_inicial.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/background_tela_inicial_campo_botao.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/campo_edit_text.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/ic_eye.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/drawable/ic_login.xml" value="0.1555" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/layout/fragment_inicio.xml" value="0.25" />
+        <entry key="..\:/Users/Hiule/NutriKids/app/src/main/res/layout/tela_login_activity2_nutri.xml" value="0.209375" />
+>>>>>>> 2e59b4772032de5cf74c0393032bc44cc170a5b9
       </map>
     </option>
   </component>
