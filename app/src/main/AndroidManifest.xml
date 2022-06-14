@@ -8,15 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <activity
+            android:name=".LoginActivity2"
+            android:exported="false" />
         <!-- Tela de login -->
         <activity
             android:name=".TelaLoginActivity2_nutri"
-            android:exported="false" />
-        <!-- Tela de Botao para escolhar de usuario -->
-
+            android:exported="false" /> <!-- Tela de Botao para escolhar de usuario -->
         <activity
             android:name=".ListaCardapioActivity"
             android:exported="false" />

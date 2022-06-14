@@ -12,48 +12,45 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class InicioActivity extends AppCompatActivity {
 
-    private FirebaseAuth user;
-    private FirebaseAuth nutri;
+     FirebaseUser auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela2_escolhar_activity);
 
-        user = FirebaseAuth.getInstance();
-        nutri= FirebaseAuth.getInstance();
-
 
     }
+
     public void LoginNutri(View view) {
-        FirebaseUser correntuser = nutri.getCurrentUser();
-            if (correntuser != null) {
-                Toast.makeText(getApplicationContext(), "Bem vindo de volta Nutri: \n" +
-                        correntuser.getDisplayName() + "; )", Toast.LENGTH_LONG).show();
-                         Intent tent = new Intent(this, ListaCardapioActivity.class);
-                         startActivity(tent);
-            } else {
-                Intent tent = new Intent(this, LoginActivity.class);
-                startActivity(tent);
-                finish();
-            }
+        if (auth != null) {
+            Intent tent = new Intent(this, PacienteActivity.class);
+            startActivity(tent);
+            Toast.makeText(getApplicationContext(), "Bem vindo de volta: \n" +
+                    auth.getEmail()+ "Doutor :)", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent tent=new Intent (this, LoginActivity.class);
+            startActivity(tent);
+
+        }
 
 
     }
 
     public void LoginResponsavel(View view) {
-        FirebaseUser correntuser = user.getCurrentUser();
-        if (correntuser != null) {
+        if (auth != null) {
             Intent tent = new Intent(this, PacienteActivity.class);
             startActivity(tent);
             Toast.makeText(getApplicationContext(), "Bem vindo de volta: \n" +
-                    correntuser.getEmail()+ "!", Toast.LENGTH_LONG).show();
+                    auth.getEmail()+ "!", Toast.LENGTH_LONG).show();
         }
         else {
-            Intent tent=new Intent(this, LoginActivity.class);
+            Intent tent=new Intent (this, LoginActivity.class);
             startActivity(tent);
-            finish();
+
         }
+
 
     }
 }
