@@ -14,12 +14,10 @@ public class Cadastro_Activity extends Activity {
         setContentView(R.layout.activity_cadastro);
     }
 
-<<<<<<< HEAD:app/src/main/java/com/example/nutrikids/Cadastro_Activity.java
-=======
+
     public void loginNutri(View view){
         Intent intent = new Intent(getApplicationContext(),TelaLoginActivity2_nutri.class);
         startActivity(intent);
     }
->>>>>>> 2e59b4772032de5cf74c0393032bc44cc170a5b9:app/src/main/java/com/example/nutrikids/Login_Activity.java
 
 }

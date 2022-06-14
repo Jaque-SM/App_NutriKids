@@ -8,9 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
-        android:theme="@style/Theme.NutriKids">
-=======
+
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <!-- Tela de login -->
@@ -19,7 +17,6 @@
             android:exported="false" />
         <!-- Tela de Botao para escolhar de usuario -->
 
->>>>>>> 2e59b4772032de5cf74c0393032bc44cc170a5b9
         <activity
             android:name=".ListaCardapioActivity"
             android:exported="false" />
