@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
     }
 
     public void mostrar_login(){
-        Intent tent= new Intent(SplashActivity.this, InicioActivity.class);
+        Intent tent= new Intent(SplashActivity.this, MainActivity.class);
         startActivity(tent);
         finish();
     }

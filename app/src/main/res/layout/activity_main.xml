@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/tela_inicial"
-    tools:context=".Login_Activity">
+    android:background="@drawable/tela_inicial">
 
     <View
         android:id="@+id/rectangle_1"
@@ -16,7 +15,7 @@
         style="@style/botao_estilo_1"
         android:layout_alignTop="@id/rectangle_1"
         android:layout_marginTop="80dp"
-        android:onClick="loginNutri"
+        android:onClick="LoginNutri"
         android:text="SOU NUTRI" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -24,6 +23,7 @@
         style="@style/botao_estilo_1"
         android:layout_alignBottom="@+id/rectangle_1"
         android:layout_marginBottom="80dp"
+        android:onClick="LoginResponsavel"
         android:text="RESPONSÁVEL" />
 
 

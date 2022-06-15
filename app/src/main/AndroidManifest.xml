@@ -13,9 +13,7 @@
             android:name=".LoginActivity2"
             android:exported="false" />
         <!-- Tela de login -->
-        <activity
-            android:name=".TelaLoginActivity2_nutri"
-            android:exported="false" /> <!-- Tela de Botao para escolhar de usuario -->
+        <!-- Tela de Botao para escolhar de usuario -->
         <activity
             android:name=".ListaCardapioActivity"
             android:exported="false" />
@@ -29,7 +27,7 @@
             android:name=".Cadastro_Activity"
             android:exported="false" />
         <activity
-            android:name=".InicioActivity"
+            android:name=".MainActivity"
             android:exported="false" /> <!-- Splash screen -->
         <activity
             android:name=".SplashActivity"

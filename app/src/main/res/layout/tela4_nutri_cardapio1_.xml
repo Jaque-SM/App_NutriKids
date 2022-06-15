@@ -39,9 +39,9 @@
         android:layout_alignStart="@id/rectangle_1"
 
         android:layout_alignTop="@id/rectangle_1"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="120dp"
         android:backgroundTint="@color/laranja"
-        android:layout_marginStart="32dp"
 
         app:maxImageSize="50dp"
         app:srcCompat="@drawable/ic_add_plus_2" />
