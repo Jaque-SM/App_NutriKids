@@ -22,7 +22,6 @@
         android:layout_width="98dp"
         android:layout_height="98dp"
         android:layout_alignStart="@id/lista_card_"
-
         android:layout_alignTop="@id/lista_card_"
         android:layout_marginEnd="20dp"
         android:src="@drawable/foto_paciente" />

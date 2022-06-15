@@ -143,9 +143,7 @@
         style="@style/botao_estilo_2"
         android:layout_alignTop="@id/confirme_barra"
         android:layout_centerHorizontal="true"
-
         android:layout_marginTop="50dp"
-
         android:onClick="mostrar_usuario"
         android:text="@string/finalizar"
         android:textAppearance="@style/finalizar_text" />

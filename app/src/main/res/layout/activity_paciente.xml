@@ -5,8 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/cardapio"
-    android:clipToOutline="true"
-    tools:context=".PacienteActivity">
+    android:clipToOutline="true">
 
 
     <View
@@ -23,16 +22,26 @@
         android:src="@drawable/foto_paciente"/>
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button_cardapio"
         style="@style/botao_estilo_3"
-
         android:layout_alignTop="@id/barra1"
-        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
-
+        android:layout_marginTop="120dp"
+        android:onClick="onClick"
         android:text="@string/cardapio_paciente"
         android:textAppearance="@style/cardapio" />
+
+    <Button
+        android:id="@+id/button_logaut"
+        style="@style/botao_estilo_2"
+        android:layout_width="98dp"
+        android:layout_height="62dp"
+        android:onClick="logaut"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:text="@string/desloga"
+        android:textAppearance="@style/desloga2" />
 
 
 </RelativeLayout>

@@ -23,10 +23,26 @@
 
     <string name="cardapio_paciente">Cardápio de Pedro</string>
 
+    <string name="desloga">Logout</string>
+
+    <style name="desloga2">
+        <item name="android:textSize">
+            32sp
+        </item>
+        <item name="android:fontFamily">
+            @font/roboto_black
+        </item>
+
+        <item name="android:textColor">
+            #2D722B
+        </item>
+
+    </style>
+
     <style name="cardapio">
 
         <item name="android:textSize">
-            24sp
+            20sp
         </item>
 
         <item name="android:fontFamily">

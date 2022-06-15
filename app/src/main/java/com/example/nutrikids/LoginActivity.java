@@ -16,14 +16,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email;
     private EditText senha;
-    private Handler handler;
     private ProgressBar load;
     private FirebaseAuth user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,14 @@ public class LoginActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance();
 
+
         load = findViewById(R.id.loading);
         email = findViewById(R.id.camp_login);
         senha = findViewById(R.id.camp_senha);
 
     }
+
+
     public void TelaResponsavel(View view) {
         String loginEmail = email.getText().toString();
         String loginSenha = senha.getText().toString();
@@ -62,11 +66,15 @@ public class LoginActivity extends AppCompatActivity {
                     });
         }
 
+
     }
     public void CriarConta(View view){
         Intent tent=new Intent(this, Cadastro_Activity.class);
         startActivity(tent);
 
     }
+
+
+
 }
 
