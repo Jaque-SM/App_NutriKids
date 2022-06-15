@@ -21,6 +21,7 @@
         android:layout_marginEnd="20dp"
         android:src="@drawable/foto_paciente"/>
 
+
     <Button
         android:id="@+id/button_cardapio"
         style="@style/botao_estilo_3"
