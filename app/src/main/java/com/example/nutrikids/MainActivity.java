@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void LoginNutri(View view) {
+    public void Login(View view) {
         if (auth != null) {
             Intent tent = new Intent(this, PacienteActivity.class);
             startActivity(tent);
@@ -38,19 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void LoginResponsavel(View view) {
-        if (auth != null) {
-            Intent tent = new Intent(this, PacienteActivity.class);
-            startActivity(tent);
-            Toast.makeText(getApplicationContext(), "Bem vindo de volta: \n" +
-                    auth.getEmail()+ "!", Toast.LENGTH_LONG).show();
-        }
-        else {
-            Intent tent=new Intent (this, LoginActivity2.class);
-            startActivity(tent);
 
-        }
 
 
     }
-}
+

@@ -9,9 +9,6 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity
-            android:name=".LoginActivity2"
-            android:exported="false" />
         <!-- Tela de login -->
         <!-- Tela de Botao para escolhar de usuario -->
         <activity

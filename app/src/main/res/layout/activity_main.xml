@@ -14,17 +14,9 @@
         android:id="@+id/botao_sou_nutri"
         style="@style/botao_estilo_1"
         android:layout_alignTop="@id/rectangle_1"
-        android:layout_marginTop="80dp"
-        android:onClick="LoginNutri"
-        android:text="SOU NUTRI" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/botao_responsavel"
-        style="@style/botao_estilo_1"
-        android:layout_alignBottom="@+id/rectangle_1"
-        android:layout_marginBottom="80dp"
-        android:onClick="LoginResponsavel"
-        android:text="RESPONSÁVEL" />
+        android:layout_marginTop="139dp"
+        android:onClick="Login"
+        android:text="Entrar" />
 
 
 </RelativeLayout>

@@ -1,80 +1,141 @@
 package com.example.nutrikids;
 
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
+import com.example.nutrikids.modelo.User;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 public class Cadastro_Activity extends AppCompatActivity {
 
-    static  EditText nome_completo;
-    static  EditText email_barra;
-    static  EditText senha_barra;
-    static  EditText confirme_senha_barra;
-
-    static String nome;
-    static String email;
-    static String senha;
-    static String confirme_senha;
+    private EditText nome_completo;
+    private EditText email_barra;
+    private EditText senha_barra;
+    private EditText confirme_senha_barra;
 
 
-    public String testar;
-    Map<String, Object> user;
-    FirebaseFirestore bd;
+    private String nome;
+    private String email;
+    private String senha;
+    private String confirme_senha;
+    static  String tipo_selecionado;
+
+    private FirebaseFirestore bd;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+
+    private String testar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-       user=new HashMap<>();
+        bd = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
-        bd=FirebaseFirestore.getInstance();
 
-        email_barra=findViewById(R.id.email_barra);
-        senha_barra=findViewById(R.id.senha_barra);
-        confirme_senha_barra=findViewById(R.id.confirme_barra);
-        nome_completo=findViewById(R.id.nome_completo);
+        email_barra = findViewById(R.id.email_barra);
+        senha_barra = findViewById(R.id.senha_barra);
+        confirme_senha_barra = findViewById(R.id.confirme_barra);
+        nome_completo = findViewById(R.id.nome_completo);
+
+        tipo_selecionado = "";
 
     }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.tipo_nutri:
+                if (checked)
+                    this.tipo_selecionado="nutricionista";
+
+                break;
+            case R.id.tipo_paciente:
+                if (checked)
+                    this.tipo_selecionado="responsavel";
+                    break;
+        }
+    }
+
+    public void AddCadastro(View view) {
+        nome = nome_completo.getText().toString();
+        email = email_barra.getText().toString();
+        senha = senha_barra.getText().toString();
+        confirme_senha = confirme_senha_barra.getText().toString();
+
+        Log.d(testar, "Tipo: "+ tipo_selecionado);
+
+        if (Nulidade() != null) {
+            mAuth.createUserWithEmailAndPassword(email, senha)
+                    .addOnCompleteListener(this, task -> salvarNaColecao());
+        }
+
+    }
+
+    private void salvarNaColecao() {
+
+        String uid = mAuth.getCurrentUser().getUid();
+
+        User user = new User(uid, nome, email, tipo_selecionado);
+
+        bd.collection("User").document(uid).set(user).addOnSuccessListener(unused -> {
+            Snackbar.make(nome_completo, "Cadastrado na coleção", Snackbar.LENGTH_SHORT).show();
+        });
+
+        fazerLogin();
+        
+    }
+
+    private void fazerLogin() {
+        mAuth.signInWithEmailAndPassword(email, senha).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Intent intent = new Intent(Cadastro_Activity.this, ListaCardapioActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
     public String Nulidade() {
 
-        senha=senha_barra.getText().toString();
+        senha = senha_barra.getText().toString();
 
-        Log.d(testar, "Entrou em nulidade");
+        Log.d("testar", "Entrou em nulidade");
 
-        if (TextUtils.isEmpty(nome)){
+        if (TextUtils.isEmpty(nome)) {
             Toast.makeText(this, "O campo nome não pode ser nulo", Toast.LENGTH_SHORT).show();
             return null;
-       }
-        if (TextUtils.isEmpty(email)){
-            Toast.makeText(this,"O campo email não pode ser nulo", Toast.LENGTH_SHORT).show();
+        }
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "O campo email não pode ser nulo", Toast.LENGTH_SHORT).show();
             return null;
         }
-        if (TextUtils.isEmpty(senha)){
-            Toast.makeText(this,"O campo senha não pode ser nulo", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(senha)) {
+            Toast.makeText(this, "O campo senha não pode ser nulo", Toast.LENGTH_SHORT).show();
             return null;
         }
-        if (TextUtils.isEmpty(confirme_senha)||!confirme_senha.equals(senha)){
-            Toast.makeText(this,"O campo senha não esta igual a referencia acima",
+        if (TextUtils.isEmpty(confirme_senha) || !confirme_senha.equals(senha)) {
+            Toast.makeText(this, "O campo senha não esta igual a referencia acima",
                     Toast.LENGTH_SHORT).show();
             return null;
 
@@ -82,45 +143,6 @@ public class Cadastro_Activity extends AppCompatActivity {
         return "Nada errado em campos";
 
     }
-
-    public void AddCadastro(View view){
-        nome=nome_completo.getText().toString();
-        email=email_barra.getText().toString();
-        senha=senha_barra.getText().toString();
-        confirme_senha=confirme_senha_barra.getText().toString();
-
-        if (Nulidade()!=null) {
-
-
-            user.put("Nome", nome);
-            user.put("Email", email);
-            user.put("Senha", senha);
-            user.put("Confirme_Senha", confirme_senha);
-
-            Intent intent=new Intent(this, LoginActivity.class);
-
-            bd.collection("/Nutricionista").document("nutricionista")
-                    .set(user)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Log.d(testar, "Dado add com sucesso");
-                            Toast.makeText(Cadastro_Activity.this, "Dados cadastrados", Toast.LENGTH_LONG).show();
-                            //startActivity(intent);
-
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(testar, "Deu erro aki");
-
-                        }
-                    });
-        }
-
-        }
 
 
 }
