@@ -7,8 +7,6 @@ public class User {
     private String email;
     private String tipo;
 
-    public User() {
-    }
 
     public User(String id, String nome, String email, String tipo) {
         this.id = id;

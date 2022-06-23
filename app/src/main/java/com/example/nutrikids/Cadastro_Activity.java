@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,14 +28,18 @@ public class Cadastro_Activity extends AppCompatActivity {
     private EditText senha_barra;
     private EditText confirme_senha_barra;
 
+
     private String nome;
     private String email;
     private String senha;
     private String confirme_senha;
+    static  String tipo_selecionado;
 
     private FirebaseFirestore bd;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+
+    private String testar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +50,30 @@ public class Cadastro_Activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+
         email_barra = findViewById(R.id.email_barra);
         senha_barra = findViewById(R.id.senha_barra);
         confirme_senha_barra = findViewById(R.id.confirme_barra);
         nome_completo = findViewById(R.id.nome_completo);
 
+        tipo_selecionado = "";
+
+    }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.tipo_nutri:
+                if (checked)
+                    this.tipo_selecionado="nutricionista";
+
+                break;
+            case R.id.tipo_paciente:
+                if (checked)
+                    this.tipo_selecionado="responsavel";
+                    break;
+        }
     }
 
     public void AddCadastro(View view) {
@@ -58,27 +82,26 @@ public class Cadastro_Activity extends AppCompatActivity {
         senha = senha_barra.getText().toString();
         confirme_senha = confirme_senha_barra.getText().toString();
 
+        Log.d(testar, "Tipo: "+ tipo_selecionado);
+
         if (Nulidade() != null) {
-
-            User user = new User(null, nome, email, "nutri");
-
             mAuth.createUserWithEmailAndPassword(email, senha)
                     .addOnCompleteListener(this, task -> salvarNaColecao());
-
-            fazerLogin();
-
         }
 
     }
 
     private void salvarNaColecao() {
-        String uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
-        User user = new User(uid, nome, email, "responsável");
+        String uid = mAuth.getCurrentUser().getUid();
 
-        bd.collection("users").document(uid).set(user).addOnSuccessListener(unused -> {
+        User user = new User(uid, nome, email, tipo_selecionado);
+
+        bd.collection("User").document(uid).set(user).addOnSuccessListener(unused -> {
             Snackbar.make(nome_completo, "Cadastrado na coleção", Snackbar.LENGTH_SHORT).show();
         });
+
+        fazerLogin();
         
     }
 

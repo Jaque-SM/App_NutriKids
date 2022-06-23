@@ -148,5 +148,26 @@
         android:text="@string/finalizar"
         android:textAppearance="@style/finalizar_text" />
 
+    <RadioGroup
+        android:layout_width="201dp"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/tipo_paciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Responsavel"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:id="@+id/tipo_nutri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Nutri"
+            android:onClick="onRadioButtonClicked"/>
+
+    </RadioGroup>
+
 
 </RelativeLayout>

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_nutri);
+        setContentView(R.layout.activity_login);
 
         user = FirebaseAuth.getInstance();
 
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void verificarTipoDeUsuario() {
 
-        firebaseFirestore.collection("users").document(currentUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        firebaseFirestore.collection("User").document(currentUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
