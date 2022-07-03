@@ -16,34 +16,43 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp" />
-    <!--
-    <Button
-        android:id="@+id/botao_add"
-        style="@style/botao_estilo_3"
-        android:layout_alignTop="@id/rectangle_1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
 
-        android:text="JORGE"
-        android:textAlignment="viewStart"
-
-
-        android:textSize="21dp" />
-
-    -->
-    <!-- Botao de adicionar lista de cardapio -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botao_add_cardapio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/rectangle_1"
-
         android:layout_alignTop="@id/rectangle_1"
         android:layout_marginStart="32dp"
         android:layout_marginTop="120dp"
         android:backgroundTint="@color/laranja"
+        android:onClick="AddCardapio"
 
         app:maxImageSize="50dp"
         app:srcCompat="@drawable/ic_add_plus_2" />
+
+    <Button
+        android:id="@+id/button_logaut"
+        style="@style/botao_estilo_2"
+        android:layout_width="98dp"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:onClick="deslogaut"
+        android:text="@string/desloga"
+        android:textAppearance="@style/desloga2" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_remove"
+        style="@style/botao_estilo_2"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:onClick="remover"
+        android:text="REMOVER"
+        android:textAppearance="@style/desloga2" />
 
 </RelativeLayout>

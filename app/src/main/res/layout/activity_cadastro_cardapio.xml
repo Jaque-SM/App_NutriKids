@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tela_cadast"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fundo_cores">
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="323dp"
+        android:layout_height="655dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_tela_inicial" />
+
+    <TextView
+        android:id="@+id/titulo_carpadio"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+
+        android:layout_alignTop="@id/rectangle_1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto_black"
+        android:gravity="top"
+        android:text="CARDÁPIO"
+        android:textAppearance="@style/nutrikids" />
+
+
+    <TextView
+        android:id="@+id/nome_comple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/email_paciente"
+
+        android:layout_alignTop="@id/titulo_carpadio"
+
+        android:layout_marginTop="52dp"
+        android:text="Inserir email do paciente"
+        android:textAppearance="@style/nome_completo" />
+
+    <EditText
+        android:id="@+id/email_paciente"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+
+        android:ems="10"
+        android:padding="12dp"
+        android:hint="E-MAIL"
+        android:inputType="textEmailAddress"
+
+        android:layout_alignTop="@id/nome_comple"
+        android:background="@drawable/custom_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/cafe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@+id/email_paciente"
+        android:layout_alignTop="@+id/email_paciente"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+
+
+        android:text="Insirar as seguintes refeições: "
+        android:textAppearance="@style/data_de_nas" />
+
+    <EditText
+        android:id="@+id/cafe_manha"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignStart="@+id/cafe"
+        android:layout_alignTop="@id/cafe"
+        android:layout_marginTop="20dp"
+
+        android:background="@drawable/custom_input"
+
+        android:elevation="4dp"
+        android:ems="10"
+        android:hint="Café da manha"
+        android:inputType="text"
+        android:padding="12dp" />
+
+
+
+
+    <EditText
+        android:id="@+id/lanche_manha"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+        android:hint="Lanche da manha"
+        android:inputType="text"
+        android:padding="12dp"
+
+        android:background="@drawable/custom_input"
+
+        android:layout_alignStart="@+id/cafe_manha"
+        android:layout_alignTop="@id/cafe_manha"
+        android:layout_marginTop="50dp"
+
+        android:elevation="4dp" />
+
+
+
+    <EditText
+        android:id="@+id/almoco"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lanche_manha"
+        android:layout_alignTop="@+id/lanche_manha"
+        android:layout_marginTop="50dp"
+
+        android:ems="10"
+        android:hint="Almoço"
+        android:inputType="text"
+        android:padding="12dp"
+
+        android:background="@drawable/custom_input"
+
+        />
+
+
+
+    <EditText
+        android:id="@+id/lanche_tarde"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/almoco"
+        android:layout_alignTop="@id/almoco"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Lanche da Tarde"
+        android:inputType="text"
+        android:padding="12dp"
+
+        android:background="@drawable/custom_input" />
+
+
+
+    <EditText
+        android:id="@+id/jantar"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lanche_tarde"
+        android:layout_alignTop="@id/lanche_tarde"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Lanche da manha"
+        android:inputType="text"
+        android:padding="12dp"
+
+        android:background="@drawable/custom_input"  />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_finalizar"
+        style="@style/botao_estilo_2"
+        android:layout_alignTop="@id/jantar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:onClick="AddCardapio"
+        android:text="Finalizar Cardapio"
+        android:textAppearance="@style/finalizar_text" />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tela_remove"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back_cadastro">
+
+
+    <TextView
+        android:id="@+id/texto_senha"
+        android:layout_width="268dp"
+        android:layout_height="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:elevation="4dp"
+        android:text="Informar o email do Cardapio:" />
+
+    <EditText
+        android:id="@+id/campo_email_remove"
+        android:layout_width="268dp"
+        android:layout_height="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/estilo_edit_campo_cadastro"
+        android:elevation="4dp" />
+
+    <Button
+        android:id="@+id/remover"
+        style="@style/botao_estilo_2"
+        android:layout_width="98dp"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:onClick="RemoverCard"
+        android:text="Remover Card"
+        android:textAppearance="@style/desloga2" />
+
+</RelativeLayout>

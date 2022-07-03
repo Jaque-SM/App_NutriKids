@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/cardapio"
-    android:clipToOutline="true">
+    android:clipToOutline="true"
+    android:scrollbarThumbHorizontal="@drawable/background_tela_inicial_campo_botao">
 
 
     <View
@@ -15,33 +16,95 @@
         android:layout_centerInParent="true"
         android:background="@drawable/background_tela_inicial" />
 
-    <ImageView
-        android:layout_width="98dp"
-        android:layout_height="98dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/foto_paciente"/>
 
+    <TextView
+        android:id="@+id/titulo_carpadio"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
 
-    <Button
-        android:id="@+id/button_cardapio"
-        style="@style/botao_estilo_3"
         android:layout_alignTop="@id/barra1"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:onClick="onClick"
-        android:text="@string/cardapio_paciente"
-        android:textAppearance="@style/cardapio" />
 
-    <Button
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto_black"
+        android:gravity="top"
+        android:text="CARDÁPIO"
+        android:textAppearance="@style/nutrikids" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_logaut"
         style="@style/botao_estilo_2"
         android:layout_width="98dp"
         android:layout_height="62dp"
-        android:onClick="logaut"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
+        android:layout_alignBottom="@id/barra1"
+        android:layout_marginBottom="20dp"
+        android:onClick="logaut"
         android:text="@string/desloga"
         android:textAppearance="@style/desloga2" />
+
+
+
+    <TextView
+        android:id="@+id/cafe_manha"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/barra1"
+        android:layout_marginTop="100dp"
+        android:background="@color/prata"
+        android:padding="8dp"
+        android:textAppearance="@style/cardapio" />
+
+    <TextView
+        android:id="@+id/lanche_manha"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/cafe_manha"
+        android:layout_marginTop="55dp"
+        android:background="@color/prata"
+        android:padding="8dp"
+        android:textAppearance="@style/cardapio" />
+
+    <TextView
+        android:id="@+id/almoco"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/lanche_manha"
+        android:layout_marginTop="55dp"
+        android:background="@color/prata"
+        android:padding="8dp"
+        android:textAppearance="@style/cardapio" />
+
+    <TextView
+        android:id="@+id/lanche_tarde"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/prata"
+        android:layout_alignTop="@id/almoco"
+        android:layout_marginTop="55dp"
+        android:textAppearance="@style/cardapio" />
+
+    <TextView
+        android:id="@+id/jantar"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+
+        android:padding="8dp"
+
+        android:background="@color/prata"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/lanche_tarde"
+        android:layout_marginTop="55dp"
+        android:textAppearance="@style/cardapio" />
 
 
 </RelativeLayout>

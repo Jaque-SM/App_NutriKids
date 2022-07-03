@@ -2,10 +2,12 @@ package com.example.nutrikids;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,11 +27,13 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText senha;
     private ProgressBar load;
-    private FirebaseAuth user;
+    private FirebaseAuth firebaseAuth;
 
     private FirebaseFirestore firebaseFirestore;
-    private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
+
+    private String testar;
+    private String currentUserID;
 
 
     @Override
@@ -37,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        user = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         load = findViewById(R.id.loading);
         email = findViewById(R.id.camp_login);
@@ -45,17 +49,24 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-        currentUser = mAuth.getCurrentUser();
+
+        AppCompatButton buttonLogin = findViewById(R.id.botao_entrar);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TelaLogin();
+            }
+        });
 
     }
 
-    public void TelaResponsavel(View view) {
+    public void TelaLogin() {
         String loginEmail = email.getText().toString();
         String loginSenha = senha.getText().toString();
 
         if (!TextUtils.isEmpty(loginEmail) || !TextUtils.isEmpty(loginSenha)) {
             load.setVisibility(View.VISIBLE);
-            user.signInWithEmailAndPassword(loginEmail, loginSenha)
+            firebaseAuth.signInWithEmailAndPassword(loginEmail, loginSenha)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -63,51 +74,69 @@ public class LoginActivity extends AppCompatActivity {
 
                                 verificarTipoDeUsuario();
 
-                                load.setVisibility(View.INVISIBLE);
-
                             } else {
                                 String error = task.getException().getMessage();
-                                Toast.makeText(LoginActivity.this, "Error no Login " + error, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Error:  " + error, Toast.LENGTH_SHORT).show();
                                 load.setVisibility(View.INVISIBLE);
 
                             }
                         }
                     });
+
         }
 
 
     }
 
-    private void verificarTipoDeUsuario() {
+    public void verificarTipoDeUsuario() {
+        currentUserID = firebaseAuth.getCurrentUser().getUid();
+        try {
+            firebaseFirestore.collection("User").document(currentUserID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
 
-        firebaseFirestore.collection("User").document(currentUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        User user = document.toObject(User.class);
+                        Log.d(testar, "Entrou aki no metodo login");
+                        Intent intent;
 
-                    DocumentSnapshot document = task.getResult();
-                    User user = document.toObject(User.class);
+                        if(user.getTipo() != null){
+                            if (user.getTipo().equals("nutricionista")) {
+                                intent = new Intent(LoginActivity.this, ListaCardapioActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            if (user.getTipo().equals("responsavel")) {
+                                intent = new Intent(LoginActivity.this, PacienteActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                        else {
+                            if (user.getTipo()==null) {
+                                Toast.makeText(LoginActivity.this, "User não encontrado", Toast.LENGTH_LONG).show();
+                                Log.d(testar, "User não encontrado");
+                            }
+                        }
 
-                    Intent intent;
-                    if (user.getTipo().equals("nutricionista")) {
-                        intent = new Intent(LoginActivity.this, ListaCardapioActivity.class);
                     }
-                    else {
-                        intent = new Intent(LoginActivity.this, PacienteActivity.class);
-                    }
-                    startActivity(intent);
-                    finish();
+
                 }
-
-            }
-        });
+            });
+        } catch (Exception e){
+            Toast.makeText(LoginActivity.this, "O usuário não está cadastrado no sistema", Toast.LENGTH_LONG);
+        }
     }
 
     public void CriarConta(View view) {
         Intent tent = new Intent(this, Cadastro_Activity.class);
         startActivity(tent);
     }
-
+    @Override
+    public void onBackPressed() {
+        //Desativar o botão voltar
+    }
 
 }
 

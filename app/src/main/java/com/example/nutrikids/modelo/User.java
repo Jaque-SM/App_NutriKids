@@ -14,6 +14,9 @@ public class User {
         this.email = email;
         this.tipo = tipo;
     }
+    public User() {
+
+    }
 
     public String getId() {
         return id;

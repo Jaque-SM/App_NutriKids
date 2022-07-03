@@ -9,7 +9,12 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <!-- Tela de login -->
+        <activity
+            android:name=".RemoveCardapioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroCardapioActivity"
+            android:exported="false" /> <!-- Tela de login -->
         <!-- Tela de Botao para escolhar de usuario -->
         <activity
             android:name=".ListaCardapioActivity"

@@ -47,7 +47,18 @@
         <item name="android:layout_width">301dp</item>
         <item name="android:layout_height">57dp</item>
         <item name="android:background">@drawable/campo_edit_text</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:padding">10dp</item>
+
+        <item name="android:layout_centerHorizontal">true</item>
+
+    </style>
+
+    <!-- Campo do editText fundo branco com bordas pretas -->
+    <style name="edit_text_02">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/campo_edit_text</item>
+        <item name="android:padding">8dp</item>
 
         <item name="android:layout_centerHorizontal">true</item>
 

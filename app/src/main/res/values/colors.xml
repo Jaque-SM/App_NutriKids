@@ -14,5 +14,12 @@
 
     <!-- Botao estilo 3-->
     <color name="amarelo_1">#F0F424</color>
+    <color name="pink_light">#F899B9</color>
+    <color name="violeta">#952FCD</color>
 
+    <color name="verde_claro">#C9FF0D</color>
+    <color name="purple_meio">#E4BBC1</color>
+    <color name="purple">#f2b1f5</color>
+
+    <color name="rosa_light">#ff007f</color>
 </resources>

@@ -9,9 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrikids.modelo.User;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
@@ -28,16 +30,16 @@ public class Cadastro_Activity extends AppCompatActivity {
     private EditText senha_barra;
     private EditText confirme_senha_barra;
 
+    static String nome;
+    static String email;
+    static String senha;
+    static String confirme_senha;
 
-    private String nome;
-    private String email;
-    private String senha;
-    private String confirme_senha;
     static  String tipo_selecionado;
 
-    private FirebaseFirestore bd;
-    private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
+    static FirebaseFirestore bd;
+    static FirebaseAuth mAuth;
+    static FirebaseUser currentUser;
 
     private String testar;
 
@@ -50,13 +52,14 @@ public class Cadastro_Activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-
         email_barra = findViewById(R.id.email_barra);
         senha_barra = findViewById(R.id.senha_barra);
         confirme_senha_barra = findViewById(R.id.confirme_barra);
         nome_completo = findViewById(R.id.nome_completo);
 
         tipo_selecionado = "";
+
+
 
     }
 
@@ -67,12 +70,11 @@ public class Cadastro_Activity extends AppCompatActivity {
             case R.id.tipo_nutri:
                 if (checked)
                     this.tipo_selecionado="nutricionista";
-
                 break;
             case R.id.tipo_paciente:
                 if (checked)
                     this.tipo_selecionado="responsavel";
-                    break;
+                break;
         }
     }
 
@@ -93,24 +95,23 @@ public class Cadastro_Activity extends AppCompatActivity {
 
     private void salvarNaColecao() {
 
-        String uid = mAuth.getCurrentUser().getUid();
+        String uid =mAuth.getCurrentUser().getUid();
 
         User user = new User(uid, nome, email, tipo_selecionado);
 
         bd.collection("User").document(uid).set(user).addOnSuccessListener(unused -> {
-            Snackbar.make(nome_completo, "Cadastrado na coleção", Snackbar.LENGTH_SHORT).show();
+            Toast.makeText(this, "Novo User cadastrado com sucesso", Toast.LENGTH_LONG).show();
+            fazerLogin();
         });
 
-        fazerLogin();
-        
     }
 
     private void fazerLogin() {
+        LoginActivity ab=new LoginActivity();
         mAuth.signInWithEmailAndPassword(email, senha).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Intent intent = new Intent(Cadastro_Activity.this, ListaCardapioActivity.class);
-                startActivity(intent);
+                ab.verificarTipoDeUsuario();
                 finish();
             }
         });
@@ -135,10 +136,14 @@ public class Cadastro_Activity extends AppCompatActivity {
             return null;
         }
         if (TextUtils.isEmpty(confirme_senha) || !confirme_senha.equals(senha)) {
-            Toast.makeText(this, "O campo senha não esta igual a referencia acima",
+            Toast.makeText(this, "O campo senha não esta igual a senha acima",
                     Toast.LENGTH_SHORT).show();
             return null;
 
+        }
+        if (TextUtils.isEmpty(tipo_selecionado)) {
+            Toast.makeText(this, "Escolha entre Responsável e Nutricionista", Toast.LENGTH_SHORT).show();
+            return null;
         }
         return "Nada errado em campos";
 
