@@ -39,7 +39,11 @@ public class CadastroCardapioActivity extends AppCompatActivity {
 
 
         email_paciente=findViewById(R.id.email_paciente);
-
+        cafe_manha=findViewById(R.id.cafe_manha);
+        lanche_manha=findViewById(R.id.lanche_manha);
+        almoco=findViewById(R.id.almoco);
+        lanche_tarde=findViewById(R.id.lanche_tarde);
+        jantar=findViewById(R.id.jantar);
 
         bd=FirebaseFirestore.getInstance();
         mAuth=FirebaseAuth.getInstance();
@@ -49,7 +53,7 @@ public class CadastroCardapioActivity extends AppCompatActivity {
     public void AddCardapio(View view){
         Cardapio card=new Cardapio();
 
-        email=email_paciente.getText().toString();
+        card.setEmail_paciente(email_paciente.getText().toString());
         card.setCafe_manha(cafe_manha.getText().toString());
         card.setLanche_manha(lanche_manha.getText().toString());
         card.setAlmoco(almoco.getText().toString());
@@ -58,7 +62,7 @@ public class CadastroCardapioActivity extends AppCompatActivity {
 
         Log.d(testar, "entrou aki");
 
-        bd.collection("Cardapios").document(email).set(card)
+        bd.collection("Cardapios").document(card.getEmail_paciente()).set(card)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

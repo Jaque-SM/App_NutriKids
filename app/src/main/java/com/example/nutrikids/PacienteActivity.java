@@ -65,8 +65,7 @@ public class PacienteActivity extends AppCompatActivity  {
                     Cardapio card = documentSnapshot.toObject(Cardapio.class);
                     if(card != null){
                         Log.d(texto, "Card: "+card.toString());
-                        cafe.setText(" Café da Manha: \n"+
-                                card.getCafe_manha());
+                        cafe.setText(" Café da Manha: \n"+ card.getCafe_manha());
                         lancheManha.setText("Lanche: \n"+card.getLanche_manha());
                         almoco.setText("Almoco: \n"+card.getAlmoco());
                         lancheTarde.setText("Lanche Tarde: \n"+card.getLanche_tarde());

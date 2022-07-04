@@ -45,17 +45,17 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
 
+        android:layout_alignTop="@id/nome_comple"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/custom_input"
+
+        android:elevation="4dp"
         android:ems="10"
-        android:padding="12dp"
         android:hint="E-MAIL"
         android:inputType="textEmailAddress"
 
-        android:layout_alignTop="@id/nome_comple"
-        android:background="@drawable/custom_input"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-
-        android:elevation="4dp" />
+        android:padding="12dp" />
 
     <TextView
         android:id="@+id/cafe"
@@ -66,11 +66,8 @@
         android:layout_centerHorizontal="true"
         android:layout_alignStart="@+id/email_paciente"
         android:layout_alignTop="@+id/email_paciente"
-
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
-
-
         android:text="Insirar as seguintes refeições: "
         android:textAppearance="@style/data_de_nas" />
 
@@ -92,25 +89,19 @@
         android:padding="12dp" />
 
 
-
-
     <EditText
         android:id="@+id/lanche_manha"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
-
-        android:ems="10"
-        android:hint="Lanche da manha"
-        android:inputType="text"
-        android:padding="12dp"
-
-        android:background="@drawable/custom_input"
-
         android:layout_alignStart="@+id/cafe_manha"
         android:layout_alignTop="@id/cafe_manha"
         android:layout_marginTop="50dp"
-
-        android:elevation="4dp" />
+        android:background="@drawable/custom_input"
+        android:elevation="4dp"
+        android:ems="10"
+        android:hint="Lanche da manha"
+        android:inputType="text"
+        android:padding="12dp" />
 
 
 
@@ -121,15 +112,11 @@
         android:layout_alignStart="@+id/lanche_manha"
         android:layout_alignTop="@+id/lanche_manha"
         android:layout_marginTop="50dp"
-
         android:ems="10"
         android:hint="Almoço"
         android:inputType="text"
         android:padding="12dp"
-
-        android:background="@drawable/custom_input"
-
-        />
+        android:background="@drawable/custom_input" />
 
 
 
@@ -148,7 +135,6 @@
         android:background="@drawable/custom_input" />
 
 
-
     <EditText
         android:id="@+id/jantar"
         android:layout_width="255dp"
@@ -156,12 +142,12 @@
         android:layout_alignStart="@+id/lanche_tarde"
         android:layout_alignTop="@id/lanche_tarde"
         android:layout_marginTop="50dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="Lanche da manha"
+        android:hint="Jantar"
         android:inputType="text"
-        android:padding="12dp"
 
-        android:background="@drawable/custom_input"  />
+        android:padding="12dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_finalizar"

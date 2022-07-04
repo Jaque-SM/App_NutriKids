@@ -17,8 +17,6 @@
         android:layout_alignTop="@id/rectangle_2"
         android:layout_marginTop="50dp"
         android:drawableEnd="@drawable/ic_login"
-
-
         android:hint="Login"
         android:inputType="textPersonName" />
 
@@ -28,7 +26,6 @@
         android:layout_below="@id/camp_login"
         android:layout_marginTop="47dp"
         android:drawableEnd="@drawable/ic_eye"
-
         android:hint="Senha"
         android:inputType="textPassword" />
 

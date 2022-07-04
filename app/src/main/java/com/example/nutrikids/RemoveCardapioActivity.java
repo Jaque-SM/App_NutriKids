@@ -30,6 +30,8 @@ public class RemoveCardapioActivity extends AppCompatActivity {
         campo_email=findViewById(R.id.campo_email_remove);
 
     }
+
+
     public void RemoverCard(View view){
         email=campo_email.getText().toString();
 

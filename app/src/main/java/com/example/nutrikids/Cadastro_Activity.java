@@ -59,8 +59,6 @@ public class Cadastro_Activity extends AppCompatActivity {
 
         tipo_selecionado = "";
 
-
-
     }
 
     public void onRadioButtonClicked(View view) {
